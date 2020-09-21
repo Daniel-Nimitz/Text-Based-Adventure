@@ -26,7 +26,7 @@ public class Page : ScriptableObject
     public bool buttonThreeVisible;
     public bool buttonFourVisible;
 
-    [Header("Button PAge Links")]
+    [Header("Button Page Links")]
     //these track where this page can go
     public Page buttonOnePageTo;
     public Page buttonTwoPageTo;
