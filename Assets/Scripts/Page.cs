@@ -22,5 +22,10 @@ public class Page : ScriptableObject
     public bool buttonThreeVisible;
     public bool buttonFourVisible;
 
+    //these track where this page can go
+    public Page buttonOnePageTo;
+    public Page buttonTwoPageTo;
+    public Page buttonThreePageTo;
+    public Page buttonFourPageTo;
     
 }
