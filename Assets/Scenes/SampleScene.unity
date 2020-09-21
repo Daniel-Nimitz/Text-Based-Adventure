@@ -328,8 +328,9 @@ MonoBehaviour:
   mainText: {fileID: 173749808}
   ButtonOne: {fileID: 0}
   ButtonTwo: {fileID: 0}
-  optionOne: 0
-  optionTwo: 0
+  ButtonThree: {fileID: 0}
+  ButtonFour: {fileID: 0}
+  currentPage: {fileID: 0}
 --- !u!1 &252580974
 GameObject:
   m_ObjectHideFlags: 0
@@ -1175,9 +1176,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 173749811}
+      - m_Target: {fileID: 880971345}
         m_TargetAssemblyTypeName: TextChange, Assembly-CSharp
-        m_MethodName: clickOne
+        m_MethodName: ClickButtonOne
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1236,6 +1237,7 @@ GameObject:
   - component: {fileID: 880971344}
   - component: {fileID: 880971343}
   - component: {fileID: 880971342}
+  - component: {fileID: 880971345}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1291,6 +1293,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &880971345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880971341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ee576651b27bf4ba20b332ec2a64c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainText: {fileID: 173749808}
+  ButtonOne: {fileID: 866560162}
+  ButtonTwo: {fileID: 1624483622}
+  ButtonThree: {fileID: 1807961364}
+  ButtonFour: {fileID: 1893561076}
+  currentPage: {fileID: 11400000, guid: a319c1964b9c7a144bd573db641c74af, type: 2}
 --- !u!1 &925684623
 GameObject:
   m_ObjectHideFlags: 0
