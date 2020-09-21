@@ -8,20 +8,25 @@ public class Page : ScriptableObject
 {
         //We should check if TextArea attribute is helpful or not, is the scroller we built better?
         //[TextArea]
+        [Header("Page Texts")]
         public string description;
         public string pageName;
-        //these will track what each button will say
-        public string buttonOneText;
+
+    [Header("Text On Buttons")]
+    //these will track what each button will say
+    public string buttonOneText;
         public string buttonTwoText;
         public string buttonThreeText;
         public string buttonFourText;
 
+    [Header("Button Activate/Deactivate")]
     //these booleans will controll which buttons appear
     public bool buttonOneVisible;
     public bool buttonTwoVisible;
     public bool buttonThreeVisible;
     public bool buttonFourVisible;
 
+    [Header("Button PAge Links")]
     //these track where this page can go
     public Page buttonOnePageTo;
     public Page buttonTwoPageTo;
