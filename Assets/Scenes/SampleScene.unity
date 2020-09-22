@@ -330,6 +330,10 @@ MonoBehaviour:
   ButtonTwo: {fileID: 0}
   ButtonThree: {fileID: 0}
   ButtonFour: {fileID: 0}
+  ButtonOneText: {fileID: 0}
+  ButtonTwoText: {fileID: 0}
+  ButtonThreeText: {fileID: 0}
+  ButtonFourText: {fileID: 0}
   currentPage: {fileID: 0}
 --- !u!1 &252580974
 GameObject:
@@ -1310,6 +1314,10 @@ MonoBehaviour:
   ButtonTwo: {fileID: 1624483622}
   ButtonThree: {fileID: 1807961364}
   ButtonFour: {fileID: 1893561076}
+  ButtonOneText: {fileID: 1089458588}
+  ButtonTwoText: {fileID: 1500804729}
+  ButtonThreeText: {fileID: 296565016}
+  ButtonFourText: {fileID: 1794278010}
   currentPage: {fileID: 11400000, guid: a319c1964b9c7a144bd573db641c74af, type: 2}
 --- !u!1 &925684623
 GameObject:

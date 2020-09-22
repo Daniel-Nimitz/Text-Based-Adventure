@@ -22,7 +22,7 @@ MonoBehaviour:
   buttonTwoVisible: 0
   buttonThreeVisible: 0
   buttonFourVisible: 0
-  buttonOnePageTo: {fileID: 0}
-  buttonTwoPageTo: {fileID: 0}
-  buttonThreePageTo: {fileID: 0}
-  buttonFourPageTo: {fileID: 0}
+  buttonOnePageTo: {fileID: 11400000, guid: 49d9bbb4311c624429048cc5c36710fc, type: 2}
+  buttonTwoPageTo: {fileID: 11400000, guid: 4081fb30f8af35a429fc789c17f75611, type: 2}
+  buttonThreePageTo: {fileID: 11400000, guid: 7913e5fa4bcef57419b439e54a94602e, type: 2}
+  buttonFourPageTo: {fileID: 11400000, guid: d2f685da710602441ae9be07540df6fa, type: 2}

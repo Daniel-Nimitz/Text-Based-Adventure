@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TextChange : MonoBehaviour
 {
@@ -12,13 +13,19 @@ public class TextChange : MonoBehaviour
     public Button ButtonThree;
     public Button ButtonFour;
 
+    public TextMeshProUGUI ButtonOneText;
+    public TextMeshProUGUI ButtonTwoText;
+    public TextMeshProUGUI ButtonThreeText;
+    public TextMeshProUGUI ButtonFourText;
+
     public Page currentPage;
 
     //Maybe we can use enums to make each button be generated faster
 
     public void ClickButtonOne() {
-        currentPage = currentPage.buttonOnePageTo;
         mainText.text = currentPage.buttonOnePageTo.description;
+        currentPage = currentPage.buttonOnePageTo;
+        
         
         //here we turn buttons to active or inactive
         ButtonOne.gameObject.SetActive(currentPage.buttonOnePageTo.buttonOneVisible);
@@ -27,9 +34,9 @@ public class TextChange : MonoBehaviour
         ButtonFour.gameObject.SetActive(currentPage.buttonOnePageTo.buttonFourVisible);
 
         //Here we update the text for buttons
-        ButtonOne.GetComponentInChildren<Text>().text = currentPage.buttonOnePageTo.buttonOneText;
-        ButtonTwo.GetComponentInChildren<Text>().text = currentPage.buttonOnePageTo.buttonTwoText;
-        ButtonThree.GetComponentInChildren<Text>().text = currentPage.buttonOnePageTo.buttonThreeText;
-        ButtonFour.GetComponentInChildren<Text>().text = currentPage.buttonOnePageTo.buttonFourText;
+        ButtonOneText.text = currentPage.buttonOnePageTo.buttonOneText;
+        ButtonTwoText.text = currentPage.buttonOnePageTo.buttonTwoText;
+        ButtonThreeText.text = currentPage.buttonOnePageTo.buttonThreeText;
+        ButtonFourText.text = currentPage.buttonOnePageTo.buttonFourText;
     }
 }
