@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02ed0a86165e4a340b328c4279c03a8a, type: 3}
+  m_Name: Page 2-2
+  m_EditorClassIdentifier: 
+  pageName: Page 2-2
+  description: You are now on page 2-2
+  buttonOneText: 
+  buttonTwoText: 
+  buttonThreeText: 
+  buttonFourText: 
+  buttonOneVisible: 0
+  buttonTwoVisible: 0
+  buttonThreeVisible: 0
+  buttonFourVisible: 0
+  buttonOnePageTo: {fileID: 0}
+  buttonTwoPageTo: {fileID: 0}
+  buttonThreePageTo: {fileID: 0}
+  buttonFourPageTo: {fileID: 0}

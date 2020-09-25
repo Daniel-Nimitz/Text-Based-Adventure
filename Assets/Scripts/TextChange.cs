@@ -74,6 +74,23 @@ public class TextChange : MonoBehaviour
 
     public void ChangesOnButtonOnePress() {
 
-        ChangeOnButtonPress(currentPage.buttonOnePageTo, true, true, true, true, currentPage.buttonOnePageTo.buttonOneText, currentPage.buttonOnePageTo.buttonTwoText, currentPage.buttonOnePageTo.buttonThreeText, currentPage.buttonOnePageTo.buttonFourText);
+        ChangeOnButtonPress(
+            //first we put in the Page information
+            currentPage.buttonOnePageTo, 
+            //then we put in the information about which buttons are activated/deactivated
+            currentPage.buttonOnePageTo.buttonOneVisible, currentPage.buttonOnePageTo.buttonTwoVisible, currentPage.buttonOnePageTo.buttonThreeVisible, currentPage.buttonOnePageTo.buttonFourVisible, 
+            //then we put in the information about what the text on buttons changes to be
+            currentPage.buttonOnePageTo.buttonOneText, currentPage.buttonOnePageTo.buttonTwoText, currentPage.buttonOnePageTo.buttonThreeText, currentPage.buttonOnePageTo.buttonFourText);
     }
+
+    public void ChangesOnButtonTwoPress() {
+
+        ChangeOnButtonPress(currentPage.buttonTwoPageTo, 
+
+            currentPage.buttonTwoPageTo.buttonOneVisible, currentPage.buttonTwoPageTo.buttonTwoVisible, currentPage.buttonTwoPageTo.buttonThreeVisible, currentPage.buttonTwoPageTo.buttonFourVisible, 
+            
+            currentPage.buttonTwoPageTo.buttonOneText, currentPage.buttonTwoPageTo.buttonTwoText, currentPage.buttonTwoPageTo.buttonThreeText, currentPage.buttonTwoPageTo.buttonFourText);
+    }
+
+
 }

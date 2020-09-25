@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02ed0a86165e4a340b328c4279c03a8a, type: 3}
   m_Name: StartingPage
   m_EditorClassIdentifier: 
+  pageName: Starting Page
   description: "\tFortress Rolk sits on the edge of the empire, a shield against
     the yearly attacks of the Smiling King Across the Sea.  The Smiling King\u2019s
     undead, clad in gold, cross the sea each year to attack the Empire.  This year,
@@ -33,7 +34,6 @@ MonoBehaviour:
     Reach are sent to investigate this meteor which has landed on the hill of the
     blue witch.  Her hut was destroyed, she is surrounded by flames, this is where
     we start our tale\u2026 "
-  pageName: Starting Page
   buttonOneText: We head off to the fortress
   buttonTwoText: Go into the night
   buttonThreeText: Track the comet
@@ -43,6 +43,6 @@ MonoBehaviour:
   buttonThreeVisible: 1
   buttonFourVisible: 1
   buttonOnePageTo: {fileID: 11400000, guid: 384c724a3088f584b8a909d46079587a, type: 2}
-  buttonTwoPageTo: {fileID: 0}
+  buttonTwoPageTo: {fileID: 11400000, guid: 74b506139b472334687d38ef1b82bdbb, type: 2}
   buttonThreePageTo: {fileID: 0}
   buttonFourPageTo: {fileID: 0}
