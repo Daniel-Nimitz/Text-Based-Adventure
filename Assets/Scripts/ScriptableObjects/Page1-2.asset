@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02ed0a86165e4a340b328c4279c03a8a, type: 3}
   m_Name: Page1-2
   m_EditorClassIdentifier: 
-  description: You shoudve clicked option 1 of page 1
   pageName: 
+  description: You shoudve clicked option 1 of page 1
   buttonOneText: Page 1-2 choice 1
   buttonTwoText: Page 1-2 choice 2
   buttonThreeText: Page 1-2 choice 3
@@ -21,7 +21,7 @@ MonoBehaviour:
   buttonOneVisible: 1
   buttonTwoVisible: 1
   buttonThreeVisible: 0
-  buttonFourVisible: 1
+  buttonFourVisible: 0
   buttonOnePageTo: {fileID: 0}
   buttonTwoPageTo: {fileID: 0}
   buttonThreePageTo: {fileID: 0}
