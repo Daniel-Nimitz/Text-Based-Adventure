@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class OpenMenu : MonoBehaviour
 {
-    [SerializeField] GameObject MenuCanvas;
+    public GameObject MenuCanvas;
 
+ 
     //This will open the menu
     public void ActivateMenu() {
         MenuCanvas.SetActive(true);

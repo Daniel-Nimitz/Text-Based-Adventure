@@ -417,7 +417,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 387928850}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: OpenMenu, Assembly-CSharp
         m_MethodName: ActivateMenu
         m_Mode: 1
@@ -632,7 +632,6 @@ GameObject:
   - component: {fileID: 387928849}
   - component: {fileID: 387928848}
   - component: {fileID: 387928847}
-  - component: {fileID: 387928850}
   m_Layer: 8
   m_Name: Menu Canvas
   m_TagString: Untagged
@@ -723,19 +722,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &387928850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 387928845}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f5544f36518e2a479b02480f17113ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MenuCanvas: {fileID: 387928845}
 --- !u!1 &437399326
 GameObject:
   m_ObjectHideFlags: 0
@@ -1182,7 +1168,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 880971345}
         m_TargetAssemblyTypeName: TextChange, Assembly-CSharp
-        m_MethodName: ClickButtonOne
+        m_MethodName: ChangesOnButtonOnePress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1242,6 +1228,7 @@ GameObject:
   - component: {fileID: 880971343}
   - component: {fileID: 880971342}
   - component: {fileID: 880971345}
+  - component: {fileID: 880971346}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -1319,6 +1306,19 @@ MonoBehaviour:
   ButtonThreeText: {fileID: 296565016}
   ButtonFourText: {fileID: 1794278010}
   currentPage: {fileID: 11400000, guid: a319c1964b9c7a144bd573db641c74af, type: 2}
+--- !u!114 &880971346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880971341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f5544f36518e2a479b02480f17113ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MenuCanvas: {fileID: 387928845}
 --- !u!1 &925684623
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,7 +1401,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 387928850}
+      - m_Target: {fileID: 880971346}
         m_TargetAssemblyTypeName: OpenMenu, Assembly-CSharp
         m_MethodName: CloseMenu
         m_Mode: 1
@@ -2047,7 +2047,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 387928850}
+      - m_Target: {fileID: 880971346}
         m_TargetAssemblyTypeName: OpenMenu, Assembly-CSharp
         m_MethodName: ActivateMenu
         m_Mode: 1
@@ -2779,7 +2779,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 387928850}
+      - m_Target: {fileID: 880971346}
         m_TargetAssemblyTypeName: OpenMenu, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -3348,8 +3348,8 @@ GameObject:
   - component: {fileID: 1974438183}
   - component: {fileID: 1974438182}
   m_Layer: 5
-  m_Name: MainCanvas
-  m_TagString: Untagged
+  m_Name: Main Canvas
+  m_TagString: Main Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
