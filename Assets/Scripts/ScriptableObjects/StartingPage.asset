@@ -44,5 +44,5 @@ MonoBehaviour:
   buttonFourVisible: 1
   buttonOnePageTo: {fileID: 11400000, guid: 384c724a3088f584b8a909d46079587a, type: 2}
   buttonTwoPageTo: {fileID: 11400000, guid: 74b506139b472334687d38ef1b82bdbb, type: 2}
-  buttonThreePageTo: {fileID: 0}
-  buttonFourPageTo: {fileID: 0}
+  buttonThreePageTo: {fileID: 11400000, guid: 9743131806f45be47875433c69397738, type: 2}
+  buttonFourPageTo: {fileID: 11400000, guid: 4d2b4ff03141e1740bebf9b36470e725, type: 2}
