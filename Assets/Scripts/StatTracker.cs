@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class StatTracker : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int strength = 60;
+    public int corruption = 5;
+    public int arcana = 10;
 }
