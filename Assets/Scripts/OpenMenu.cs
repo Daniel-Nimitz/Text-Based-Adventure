@@ -34,4 +34,13 @@ public class OpenMenu : MonoBehaviour
         SceneManager.LoadScene(scene.name);
 
     }
+
+    public void ActivateStatsMenu()
+    {
+        StatisticsMenu.SetActive(true);
+    }
+    public void CloseStatsMenu()
+    {
+        StatisticsMenu.SetActive(false);
+    }
 }
