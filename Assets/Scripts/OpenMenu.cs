@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class OpenMenu : MonoBehaviour
 {
     public GameObject MenuCanvas;
+    public GameObject StatisticsMenu;
+
+    
 
 
     //This will open the menu
@@ -19,6 +22,7 @@ public class OpenMenu : MonoBehaviour
         MenuCanvas.SetActive(false);
     }
 
+
     //this will quit the game
     public void QuitGame()
     {
@@ -29,5 +33,14 @@ public class OpenMenu : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene(); 
         SceneManager.LoadScene(scene.name);
 
-    } 
+    }
+
+    public void ActivateStatsMenu()
+    {
+        StatisticsMenu.SetActive(true);
+    }
+    public void CloseStatsMenu()
+    {
+        StatisticsMenu.SetActive(false);
+    }
 }
