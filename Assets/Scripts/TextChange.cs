@@ -30,7 +30,8 @@ public class TextChange : MonoBehaviour
     public void ChangeOnButtonPress(Page buttonPagesTo, bool buttonOneActive, bool ButtonTwoActive, bool buttonThreeActive, bool ButtonFourActive, string ButtonOneTextChange, string ButtonTwoTextChange, string ButtonThreeTextChange, string ButtonFourTextChange)
     {
         //This checks if the player has a high enough stat to go to the indicated page.  IF not then they are sent to the failure page
-        ChoosePageToTurnTo(buttonPagesTo);
+        currentPage = buttonPagesTo;
+        mainText.text = buttonPagesTo.description;
 
         //here we turn buttons to active or inactive
         ButtonActivationChanges(buttonOneActive, ButtonTwoActive, buttonThreeActive, ButtonFourActive);
@@ -39,19 +40,19 @@ public class TextChange : MonoBehaviour
         ButtonTextChanges(ButtonOneTextChange, ButtonTwoTextChange, ButtonThreeTextChange, ButtonFourTextChange);
     }
 
-    private void ChoosePageToTurnTo(Page buttonPagesTo)
-    {
-        if (StatisticsTrackerObject.strength > currentPage.neededToPass)
-        {
-            currentPage = buttonPagesTo;
-            mainText.text = buttonPagesTo.description;
-        }
-        else if (StatisticsTrackerObject.strength < currentPage.neededToPass)
-        {
-            currentPage = currentPage.PageOnFailure;
-            mainText.text = currentPage.description;
-        }
-    }
+    //private void ChoosePageToTurnTo(Page buttonPagesTo)
+    //{
+    //    if (StatisticsTrackerObject.strength > currentPage.neededToPass)
+    //    {
+    //        currentPage = buttonPagesTo;
+    //        mainText.text = buttonPagesTo.description;
+    //    }
+    //    else if (StatisticsTrackerObject.strength < currentPage.neededToPass)
+    //    {
+    //        currentPage = currentPage.PageOnFailure;
+    //        mainText.text = currentPage.description;
+    //    }
+    //}
 
     private void ButtonTextChanges(string ButtonOneTextChange, string ButtonTwoTextChange, string ButtonThreeTextChange, string ButtonFourTextChange)
     {
@@ -69,16 +70,49 @@ public class TextChange : MonoBehaviour
         ButtonFour.gameObject.SetActive(ButtonFourActive);
     }
 
-    public void ChangesOnButtonOnePress() {
+
+    public void ButtonOneChoosePageAndFlip() {
+        if (StatisticsTrackerObject.strength > currentPage.neededToPass)
+        {
+            ChangesOnButtonOneSucsess();
+        }
+        else if (StatisticsTrackerObject.strength <= currentPage.neededToPass)
+        {
+            ChangesOnButtonOneFailure();
+        }
+
+
+    }
+
+    private void ChangesOnButtonOneFailure()
+    {
+        ChangeOnButtonPress(
+        //first we put in the Page information
+        currentPage.PageOnFailure,
+        //then we put in the information about which buttons are activated/deactivated
+        currentPage.PageOnFailure.buttonOneVisible, currentPage.PageOnFailure.buttonTwoVisible, currentPage.PageOnFailure.buttonThreeVisible, currentPage.PageOnFailure.buttonFourVisible,
+        //then we put in the information about what the text on buttons changes to be
+        currentPage.PageOnFailure.buttonOneText, currentPage.PageOnFailure.buttonTwoText, currentPage.PageOnFailure.buttonThreeText, currentPage.PageOnFailure.buttonFourText);
+    }
+
+    private void ChangesOnButtonOneSucsess()
+    {
 
         ChangeOnButtonPress(
             //first we put in the Page information
-            currentPage.buttonOnePageTo, 
+            currentPage.buttonOnePageTo,
             //then we put in the information about which buttons are activated/deactivated
-            currentPage.buttonOnePageTo.buttonOneVisible, currentPage.buttonOnePageTo.buttonTwoVisible, currentPage.buttonOnePageTo.buttonThreeVisible, currentPage.buttonOnePageTo.buttonFourVisible, 
+            currentPage.buttonOnePageTo.buttonOneVisible, currentPage.buttonOnePageTo.buttonTwoVisible, currentPage.buttonOnePageTo.buttonThreeVisible, currentPage.buttonOnePageTo.buttonFourVisible,
             //then we put in the information about what the text on buttons changes to be
             currentPage.buttonOnePageTo.buttonOneText, currentPage.buttonOnePageTo.buttonTwoText, currentPage.buttonOnePageTo.buttonThreeText, currentPage.buttonOnePageTo.buttonFourText);
     }
+
+
+
+
+
+
+
 
     public void ChangesOnButtonTwoPress() {
 
