@@ -25,9 +25,22 @@ public class TextChange : MonoBehaviour
 
     
    
+
+
     public void ChangeOnButtonPress(Page buttonPagesTo, bool buttonOneActive, bool ButtonTwoActive, bool buttonThreeActive, bool ButtonFourActive, string ButtonOneTextChange, string ButtonTwoTextChange, string ButtonThreeTextChange, string ButtonFourTextChange)
     {
         //This checks if the player has a high enough stat to go to the indicated page.  IF not then they are sent to the failure page
+        ChoosePageToTurnTo(buttonPagesTo);
+
+        //here we turn buttons to active or inactive
+        ButtonActivationChanges(buttonOneActive, ButtonTwoActive, buttonThreeActive, ButtonFourActive);
+
+        //Here we update the text for buttons
+        ButtonTextChanges(ButtonOneTextChange, ButtonTwoTextChange, ButtonThreeTextChange, ButtonFourTextChange);
+    }
+
+    private void ChoosePageToTurnTo(Page buttonPagesTo)
+    {
         if (StatisticsTrackerObject.strength > currentPage.neededToPass)
         {
             currentPage = buttonPagesTo;
@@ -38,14 +51,7 @@ public class TextChange : MonoBehaviour
             currentPage = currentPage.PageOnFailure;
             mainText.text = currentPage.description;
         }
-
-        //here we turn buttons to active or inactive
-        ButtonActivationChanges(buttonOneActive, ButtonTwoActive, buttonThreeActive, ButtonFourActive);
-
-        //Here we update the text for buttons
-        ButtonTextChanges(ButtonOneTextChange, ButtonTwoTextChange, ButtonThreeTextChange, ButtonFourTextChange);
     }
-
 
     private void ButtonTextChanges(string ButtonOneTextChange, string ButtonTwoTextChange, string ButtonThreeTextChange, string ButtonFourTextChange)
     {
