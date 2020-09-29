@@ -72,14 +72,50 @@ public class TextChange : MonoBehaviour
 
 
     public void ButtonOneChoosePageAndFlip() {
-        if (StatisticsTrackerObject.strength > currentPage.neededToPass)
+        switch (currentPage.statToTest)
         {
-            ChangesOnButtonOneSucsess();
+            case StatType.Strength:
+
+                if (StatisticsTrackerObject.strength > currentPage.neededToPass)
+                {
+                    ChangesOnButtonOneSucsess();
+                }
+                else if (StatisticsTrackerObject.strength <= currentPage.neededToPass)
+                {
+                    ChangesOnButtonOneFailure();
+                }
+                break;
+
+            case StatType.Arcana:
+
+                if (StatisticsTrackerObject.arcana > currentPage.neededToPass)
+                {
+                    ChangesOnButtonOneSucsess();
+                }
+                else if (StatisticsTrackerObject.arcana <= currentPage.neededToPass)
+                {
+                    ChangesOnButtonOneFailure();
+                }
+                break;
+
+            case StatType.Corruption:
+
+                if (StatisticsTrackerObject.corruption > currentPage.neededToPass)
+                {
+                    ChangesOnButtonOneSucsess();
+                }
+                else if (StatisticsTrackerObject.corruption <= currentPage.neededToPass)
+                {
+                    ChangesOnButtonOneFailure();
+                }
+                break;
+
+            default:
+                print("Something has gone wrong, please let the developers know what was happening before you recieved this message." +
+                    "When checking wether one of your stats was too high or low for an action to be taken something went wrong. ");
+                break;
         }
-        else if (StatisticsTrackerObject.strength <= currentPage.neededToPass)
-        {
-            ChangesOnButtonOneFailure();
-        }
+        
 
 
     }

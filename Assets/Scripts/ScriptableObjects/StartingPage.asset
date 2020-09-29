@@ -48,6 +48,6 @@ MonoBehaviour:
   buttonFourPageTo: {fileID: 11400000, guid: 4d2b4ff03141e1740bebf9b36470e725, type: 2}
   StatChangeType: 0
   amountToChangeStatBy: 0
-  statToTest: 0
-  neededToPass: 6
+  statToTest: 2
+  neededToPass: 10
   PageOnFailure: {fileID: 11400000, guid: dd0747efff2e5ba4a99801ae0d1bddc8, type: 2}
