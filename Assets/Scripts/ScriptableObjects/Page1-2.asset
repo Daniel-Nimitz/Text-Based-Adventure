@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Page1-2
   m_EditorClassIdentifier: 
   pageName: 
-  description: You shoudve clicked option 1 of page 1
+  description: You shoudve clicked option 2 of page 1
   buttonOneText: Page 1-2 choice 1
   buttonTwoText: Page 1-2 choice 2
   buttonThreeText: Page 1-2 choice 3
@@ -26,3 +26,8 @@ MonoBehaviour:
   buttonTwoPageTo: {fileID: 0}
   buttonThreePageTo: {fileID: 0}
   buttonFourPageTo: {fileID: 0}
+  StatChangeType: 0
+  amountToChangeStatBy: 0
+  statToTest: 0
+  neededToPass: 0
+  PageOnFailure: {fileID: 0}

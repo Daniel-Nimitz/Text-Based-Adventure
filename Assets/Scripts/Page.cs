@@ -3,11 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum StatType { None, Strength, Arcana, Corruption };
+
+
 [CreateAssetMenu(menuName = "Text Adventure/Page")]
 public class Page : ScriptableObject
 {
-        //We should check if TextArea attribute is helpful or not, is the scroller we built better?
-        //[TextArea]
+    //We should check if TextArea attribute is helpful or not, is the scroller we built better?
+    //[TextArea]
     [Header("Page Texts")]
     public string pageName;
     public string description;
@@ -33,5 +37,20 @@ public class Page : ScriptableObject
     public Page buttonTwoPageTo;
     public Page buttonThreePageTo;
     public Page buttonFourPageTo;
-    
+
+    [Header("Change Stats")]
+    public StatType StatChangeType;
+    public int amountToChangeStatBy;
+
+    [Header("Stat Pass/Fail")]
+    public StatType statToTest;
+    public int neededToPass;
+    public Page PageOnFailure;
+    //add next part to track that if a certain stat is under a certain amount then we will go to a certain page
+    //need a pages to point to if they are below a stat
+    //need a stat to check
+    //need a number to tell us what number to check at
+    //then write in all this info into a meathod in TextChange.cs to check if the stat is below the number or not.
+    //If the stat is below the necessary number then go to the appointed page
+    //If the stat is above the necesssary number then work as normal so basically just return
 }

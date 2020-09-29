@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Page 4-1
   m_EditorClassIdentifier: 
   pageName: Page 4-1
-  description: You are on page 4-1
+  description: You are on page 4-1, might be from failing strength check on starting
+    page
   buttonOneText: 
   buttonTwoText: 
   buttonThreeText: 
@@ -26,3 +27,8 @@ MonoBehaviour:
   buttonTwoPageTo: {fileID: 0}
   buttonThreePageTo: {fileID: 0}
   buttonFourPageTo: {fileID: 0}
+  StatChangeType: 0
+  amountToChangeStatBy: 0
+  statToTest: 0
+  neededToPass: 0
+  PageOnFailure: {fileID: 0}
