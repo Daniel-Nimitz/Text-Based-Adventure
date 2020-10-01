@@ -10,29 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02ed0a86165e4a340b328c4279c03a8a, type: 3}
-  m_Name: Page 2
+  m_Name: Fail Strength
   m_EditorClassIdentifier: 
-  pageName: Page 2
-  description: You are now on page 2
-  buttonOneText: Page 2-1
-  buttonTwoText: Page 2-2
-  buttonThreeText: Page 2-3
+  pageName: Strength fail
+  description: you have failed a strength check
+  buttonOneText: 
+  buttonTwoText: 
+  buttonThreeText: 
   buttonFourText: 
-  buttonOneVisible: 1
-  buttonTwoVisible: 1
-  buttonThreeVisible: 1
+  buttonOneVisible: 0
+  buttonTwoVisible: 0
+  buttonThreeVisible: 0
   buttonFourVisible: 0
-  buttonOnePageTo: {fileID: 11400000, guid: 457cbf5dca458e2409504b378b9e5ef9, type: 2}
-  buttonTwoPageTo: {fileID: 11400000, guid: 127b2af16579a5f428ca101035871306, type: 2}
-  buttonThreePageTo: {fileID: 11400000, guid: f0913a7cd47a5f149918b4043a9eddb6, type: 2}
+  buttonOnePageTo: {fileID: 0}
+  buttonTwoPageTo: {fileID: 0}
+  buttonThreePageTo: {fileID: 0}
   buttonFourPageTo: {fileID: 0}
   StatChangeType: 0
   amountToChangeStatBy: 0
   statToTestButtonOne: 0
   neededToPassButtonOne: 0
   PageOnFailureButtonOne: {fileID: 0}
-  statToTestButtonTwo: 1
-  neededToPassButtonTwo: 10
+  statToTestButtonTwo: 0
+  neededToPassButtonTwo: 0
   PageOnFailureButtonTwo: {fileID: 0}
   statToTestButtonThree: 0
   neededToPassButtonThree: 0
