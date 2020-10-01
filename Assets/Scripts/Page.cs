@@ -42,10 +42,28 @@ public class Page : ScriptableObject
     public StatType StatChangeType;
     public int amountToChangeStatBy;
 
-    [Header("Stat Pass/Fail")]
-    public StatType statToTest;
-    public int neededToPass;
-    public Page PageOnFailure;
+    [Header("Button 1 Stat Pass/Fail")]
+    public StatType statToTestButtonOne;
+    public int neededToPassButtonOne;
+    public Page PageOnFailureButtonOne;
+
+    [Header("Button 2 Stat Pass/Fail")]
+    public StatType statToTestButtonTwo;
+    public int neededToPassButtonTwo;
+    public Page PageOnFailureButtonTwo;
+
+    [Header("Button 3 Stat Pass/Fail")]
+    public StatType statToTestButtonThree;
+    public int neededToPassButtonThree;
+    public Page PageOnFailureButtonThree;
+
+    [Header("Button 4 Stat Pass/Fail")]
+    public StatType statToTestButtonFour;
+    public int neededToPassButtonFour;
+    public Page PageOnFailureButtonFour;
+
+
+
     //add next part to track that if a certain stat is under a certain amount then we will go to a certain page
     //need a pages to point to if they are below a stat
     //need a stat to check

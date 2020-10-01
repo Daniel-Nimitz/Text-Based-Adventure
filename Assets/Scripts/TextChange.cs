@@ -23,9 +23,6 @@ public class TextChange : MonoBehaviour
     public StatTracker StatisticsTrackerObject;
 
 
-    
-   
-
 
     public void ChangeOnButtonPress(Page buttonPagesTo, bool buttonOneActive, bool ButtonTwoActive, bool buttonThreeActive, bool ButtonFourActive, string ButtonOneTextChange, string ButtonTwoTextChange, string ButtonThreeTextChange, string ButtonFourTextChange)
     {
@@ -71,16 +68,17 @@ public class TextChange : MonoBehaviour
     }
 
 
-    public void ButtonOneChoosePageAndFlip() {
-        switch (currentPage.statToTest)
+    public void ButtonOneChoosePageAndFlip() 
+    {
+        switch (currentPage.statToTestButtonOne)
         {
             case StatType.Strength:
 
-                if (StatisticsTrackerObject.strength > currentPage.neededToPass)
+                if (StatisticsTrackerObject.strength > currentPage.neededToPassButtonOne)
                 {
                     ChangesOnButtonOneSucsess();
                 }
-                else if (StatisticsTrackerObject.strength <= currentPage.neededToPass)
+                else if (StatisticsTrackerObject.strength <= currentPage.neededToPassButtonOne)
                 {
                     ChangesOnButtonOneFailure();
                 }
@@ -88,11 +86,11 @@ public class TextChange : MonoBehaviour
 
             case StatType.Arcana:
 
-                if (StatisticsTrackerObject.arcana > currentPage.neededToPass)
+                if (StatisticsTrackerObject.arcana > currentPage.neededToPassButtonOne)
                 {
                     ChangesOnButtonOneSucsess();
                 }
-                else if (StatisticsTrackerObject.arcana <= currentPage.neededToPass)
+                else if (StatisticsTrackerObject.arcana <= currentPage.neededToPassButtonOne)
                 {
                     ChangesOnButtonOneFailure();
                 }
@@ -100,35 +98,37 @@ public class TextChange : MonoBehaviour
 
             case StatType.Corruption:
 
-                if (StatisticsTrackerObject.corruption > currentPage.neededToPass)
+                if (StatisticsTrackerObject.corruption > currentPage.neededToPassButtonOne)
                 {
                     ChangesOnButtonOneSucsess();
                 }
-                else if (StatisticsTrackerObject.corruption <= currentPage.neededToPass)
+                else if (StatisticsTrackerObject.corruption <= currentPage.neededToPassButtonOne)
                 {
                     ChangesOnButtonOneFailure();
                 }
                 break;
 
+            case StatType.None:
+                    ChangesOnButtonOneSucsess();
+                break;
+
             default:
                 print("Something has gone wrong, please let the developers know what was happening before you recieved this message." +
-                    "When checking wether one of your stats was too high or low for an action to be taken something went wrong. ");
+                    "When checking wether one of your stats was too high or low for an action to be taken something went wrong.");
                 break;
         }
         
-
-
     }
 
     private void ChangesOnButtonOneFailure()
     {
         ChangeOnButtonPress(
         //first we put in the Page information
-        currentPage.PageOnFailure,
+        currentPage.PageOnFailureButtonOne,
         //then we put in the information about which buttons are activated/deactivated
-        currentPage.PageOnFailure.buttonOneVisible, currentPage.PageOnFailure.buttonTwoVisible, currentPage.PageOnFailure.buttonThreeVisible, currentPage.PageOnFailure.buttonFourVisible,
+        currentPage.PageOnFailureButtonOne.buttonOneVisible, currentPage.PageOnFailureButtonOne.buttonTwoVisible, currentPage.PageOnFailureButtonOne.buttonThreeVisible, currentPage.PageOnFailureButtonOne.buttonFourVisible,
         //then we put in the information about what the text on buttons changes to be
-        currentPage.PageOnFailure.buttonOneText, currentPage.PageOnFailure.buttonTwoText, currentPage.PageOnFailure.buttonThreeText, currentPage.PageOnFailure.buttonFourText);
+        currentPage.PageOnFailureButtonOne.buttonOneText, currentPage.PageOnFailureButtonOne.buttonTwoText, currentPage.PageOnFailureButtonOne.buttonThreeText, currentPage.PageOnFailureButtonOne.buttonFourText);
     }
 
     private void ChangesOnButtonOneSucsess()
@@ -144,13 +144,63 @@ public class TextChange : MonoBehaviour
     }
 
 
+    public void ButtonTwoChoosePageAndFlip()
+    {
+        switch (currentPage.statToTestButtonOne)
+        {
+            case StatType.Strength:
+
+                if (StatisticsTrackerObject.strength > currentPage.neededToPassButtonOne)
+                {
+                    ChangesOnButtonTwoSucsess();
+                }
+                else if (StatisticsTrackerObject.strength <= currentPage.neededToPassButtonOne)
+                {
+                    ChangesOnButtonOneFailure();
+                }
+                break;
+
+            case StatType.Arcana:
+
+                if (StatisticsTrackerObject.arcana > currentPage.neededToPassButtonOne)
+                {
+                    ChangesOnButtonTwoSucsess();
+                }
+                else if (StatisticsTrackerObject.arcana <= currentPage.neededToPassButtonOne)
+                {
+                    ChangesOnButtonOneFailure();
+                }
+                break;
+
+            case StatType.Corruption:
+
+                if (StatisticsTrackerObject.corruption > currentPage.neededToPassButtonOne)
+                {
+                    ChangesOnButtonTwoSucsess();
+                }
+                else if (StatisticsTrackerObject.corruption <= currentPage.neededToPassButtonOne)
+                {
+                    ChangesOnButtonOneFailure();
+                }
+                break;
+
+            case StatType.None:
+                ChangesOnButtonTwoSucsess();
+                break;
+
+            default:
+                print("Something has gone wrong, please let the developers know what was happening before you recieved this message." +
+                    "When checking wether one of your stats was too high or low for an action to be taken something went wrong.");
+                break;
+        }
+
+    }
 
 
 
 
 
-
-    public void ChangesOnButtonTwoPress() {
+    public void ChangesOnButtonTwoSucsess() {
 
         ChangeOnButtonPress(currentPage.buttonTwoPageTo, 
 
@@ -159,6 +209,16 @@ public class TextChange : MonoBehaviour
             currentPage.buttonTwoPageTo.buttonOneText, currentPage.buttonTwoPageTo.buttonTwoText, currentPage.buttonTwoPageTo.buttonThreeText, currentPage.buttonTwoPageTo.buttonFourText);
     }
 
+    private void ChangesOnButtonTwoFailure()
+    {
+        ChangeOnButtonPress(
+        //first we put in the Page information
+        currentPage.PageOnFailureButtonOne,
+        //then we put in the information about which buttons are activated/deactivated
+        currentPage.PageOnFailureButtonOne.buttonOneVisible, currentPage.PageOnFailureButtonOne.buttonTwoVisible, currentPage.PageOnFailureButtonOne.buttonThreeVisible, currentPage.PageOnFailureButtonOne.buttonFourVisible,
+        //then we put in the information about what the text on buttons changes to be
+        currentPage.PageOnFailureButtonOne.buttonOneText, currentPage.PageOnFailureButtonOne.buttonTwoText, currentPage.PageOnFailureButtonOne.buttonThreeText, currentPage.PageOnFailureButtonOne.buttonFourText);
+    }
 
     public void ChangesOnButtonThreePress()
     {
