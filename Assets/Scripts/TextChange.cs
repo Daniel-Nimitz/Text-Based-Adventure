@@ -208,7 +208,73 @@ public class TextChange : MonoBehaviour
         currentPage.PageOnFailureButtonTwo.buttonOneText, currentPage.PageOnFailureButtonTwo.buttonTwoText, currentPage.PageOnFailureButtonTwo.buttonThreeText, currentPage.PageOnFailureButtonTwo.buttonFourText);
     }
 
-    public void ChangesOnButtonThreePress()
+
+
+    public void ButtonThreeChoosePageAndFlip()
+    {
+        switch (currentPage.statToTestButtonThree)
+        {
+            case StatType.Strength:
+
+                if (StatisticsTrackerObject.strength > currentPage.neededToPassButtonThree)
+                {
+                    ChangesOnButtonThreeSucsess();
+                }
+                else if (StatisticsTrackerObject.strength <= currentPage.neededToPassButtonThree)
+                {
+                    ChangesOnButtonThreeFailure();
+                }
+                break;
+
+            case StatType.Arcana:
+
+                if (StatisticsTrackerObject.arcana > currentPage.neededToPassButtonThree)
+                {
+                    ChangesOnButtonThreeSucsess();
+                }
+                else if (StatisticsTrackerObject.arcana <= currentPage.neededToPassButtonThree)
+                {
+                    ChangesOnButtonThreeFailure();
+                }
+                break;
+
+            case StatType.Corruption:
+
+                if (StatisticsTrackerObject.corruption > currentPage.neededToPassButtonThree)
+                {
+                    ChangesOnButtonThreeSucsess();
+                }
+                else if (StatisticsTrackerObject.corruption <= currentPage.neededToPassButtonThree)
+                {
+                    ChangesOnButtonThreeFailure();
+                }
+                break;
+
+            case StatType.None:
+                ChangesOnButtonThreeSucsess();
+                break;
+
+            default:
+                print("Something has gone wrong, please let the developers know what was happening before you recieved this message." +
+                    "When checking wether one of your stats was too high or low for an action to be taken on after pressing button 2 something went wrong.");
+                break;
+        }
+
+    }
+
+    private void ChangesOnButtonThreeFailure()
+    {
+        ChangeOnButtonPress(
+        //first we put in the Page information
+        currentPage.PageOnFailureButtonThree,
+        //then we put in the information about which buttons are activated/deactivated
+        currentPage.PageOnFailureButtonThree.buttonOneVisible, currentPage.PageOnFailureButtonThree.buttonTwoVisible, currentPage.PageOnFailureButtonThree.buttonThreeVisible, currentPage.PageOnFailureButtonThree.buttonFourVisible,
+        //then we put in the information about what the text on buttons changes to be
+        currentPage.PageOnFailureButtonThree.buttonOneText, currentPage.PageOnFailureButtonThree.buttonTwoText, currentPage.PageOnFailureButtonThree.buttonThreeText, currentPage.PageOnFailureButtonThree.buttonFourText);
+    }
+
+
+    public void ChangesOnButtonThreeSucsess()
     {
 
         ChangeOnButtonPress(
@@ -220,7 +286,64 @@ public class TextChange : MonoBehaviour
             currentPage.buttonThreePageTo.buttonOneText, currentPage.buttonThreePageTo.buttonTwoText, currentPage.buttonThreePageTo.buttonThreeText, currentPage.buttonThreePageTo.buttonFourText);
     }
 
-    public void ChangesOnButtonFourPress()
+
+
+
+    public void ButtonFourChoosePageAndFlip()
+    {
+        switch (currentPage.statToTestButtonFour)
+        {
+            case StatType.Strength:
+
+                if (StatisticsTrackerObject.strength > currentPage.neededToPassButtonFour)
+                {
+                    ChangesOnButtonThreeSucsess();
+                }
+                else if (StatisticsTrackerObject.strength <= currentPage.neededToPassButtonFour)
+                {
+                    ChangesOnButtonThreeFailure();
+                }
+                break;
+
+            case StatType.Arcana:
+
+                if (StatisticsTrackerObject.arcana > currentPage.neededToPassButtonFour)
+                {
+                    ChangesOnButtonFourSucsess();
+                }
+                else if (StatisticsTrackerObject.arcana <= currentPage.neededToPassButtonFour)
+                {
+                    ChangesOnButtonFourFailure();
+                }
+                break;
+
+            case StatType.Corruption:
+
+                if (StatisticsTrackerObject.corruption > currentPage.neededToPassButtonFour)
+                {
+                    ChangesOnButtonFourSucsess();
+                }
+                else if (StatisticsTrackerObject.corruption <= currentPage.neededToPassButtonFour)
+                {
+                    ChangesOnButtonFourFailure();
+                }
+                break;
+
+            case StatType.None:
+                ChangesOnButtonFourSucsess();
+                break;
+
+            default:
+                print("Something has gone wrong, please let the developers know what was happening before you recieved this message." +
+                    "When checking wether one of your stats was too high or low for an action to be taken on after pressing button 2 something went wrong.");
+                break;
+        }
+
+    }
+
+   
+
+    public void ChangesOnButtonFourSucsess()
     {
 
         ChangeOnButtonPress(
@@ -230,6 +353,17 @@ public class TextChange : MonoBehaviour
             currentPage.buttonFourPageTo.buttonOneVisible, currentPage.buttonFourPageTo.buttonTwoVisible, currentPage.buttonFourPageTo.buttonThreeVisible, currentPage.buttonFourPageTo.buttonFourVisible,
             //then we put in the information about what the text on buttons changes to be
             currentPage.buttonFourPageTo.buttonOneText, currentPage.buttonFourPageTo.buttonTwoText, currentPage.buttonFourPageTo.buttonThreeText, currentPage.buttonFourPageTo.buttonFourText);
+    }
+
+    private void ChangesOnButtonFourFailure()
+    {
+        ChangeOnButtonPress(
+        //first we put in the Page information
+        currentPage.PageOnFailureButtonFour,
+        //then we put in the information about which buttons are activated/deactivated
+        currentPage.PageOnFailureButtonFour.buttonOneVisible, currentPage.PageOnFailureButtonFour.buttonTwoVisible, currentPage.PageOnFailureButtonFour.buttonThreeVisible, currentPage.PageOnFailureButtonFour.buttonFourVisible,
+        //then we put in the information about what the text on buttons changes to be
+        currentPage.PageOnFailureButtonFour.buttonOneText, currentPage.PageOnFailureButtonFour.buttonTwoText, currentPage.PageOnFailureButtonFour.buttonThreeText, currentPage.PageOnFailureButtonFour.buttonFourText);
     }
 
 }
