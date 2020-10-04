@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 
 
@@ -15,9 +16,14 @@ using UnityEngine.UI;
         public int corruption;
         public int arcana;
 
+        public Text InventoryText;
+
+        public List<string> inventoryItems = new List<string>();
+
         private void Awake()
         {
             SetInitialPlayerStats();
+            CreateInitialInventory();
         }
 
         public void AddStrength(int strengthToAdd)
@@ -41,4 +47,13 @@ using UnityEngine.UI;
             arcanaSlider.value = arcana;
             corruptionSlider.value = corruption;
         }
+
+    private void CreateInitialInventory() {
+        inventoryItems.Add("Backpack");
+        inventoryItems.Add("Armor");
+        inventoryItems.Add("Sword");
+        string inventoryAsString = string.Join(",", inventoryItems);
+        InventoryText.text = "Inventory: " + inventoryAsString;
+
+    }
     }

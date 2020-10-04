@@ -7,6 +7,7 @@ using TMPro;
 public class TextChange : MonoBehaviour
 {
     public Text mainText;
+    public Text InventoryText;
 
     public Button ButtonOne;
     public Button ButtonTwo;
@@ -23,8 +24,7 @@ public class TextChange : MonoBehaviour
     public StatTracker StatisticsTrackerObject;
 
 
-
-    public void ChangeOnButtonPress(Page buttonPagesTo, bool buttonOneActive, bool ButtonTwoActive, bool buttonThreeActive, bool ButtonFourActive, string ButtonOneTextChange, string ButtonTwoTextChange, string ButtonThreeTextChange, string ButtonFourTextChange)
+    public void ChangeOnButtonPress(Page buttonPagesTo, bool buttonOneActive, bool ButtonTwoActive, bool buttonThreeActive, bool ButtonFourActive, string ButtonOneTextChange, string ButtonTwoTextChange, string ButtonThreeTextChange, string ButtonFourTextChange, string itemAddedToInventory, string itemRemovedFromInventory)
     {
         //This checks if the player has a high enough stat to go to the indicated page.  IF not then they are sent to the failure page
         currentPage = buttonPagesTo;
@@ -35,11 +35,14 @@ public class TextChange : MonoBehaviour
 
         //Here we update the text for buttons
         ButtonTextChanges(ButtonOneTextChange, ButtonTwoTextChange, ButtonThreeTextChange, ButtonFourTextChange);
+
+
+       
+        InventoryChange(itemAddedToInventory, itemRemovedFromInventory );
     }
 
-  
-
-    private void ButtonTextChanges(string ButtonOneTextChange, string ButtonTwoTextChange, string ButtonThreeTextChange, string ButtonFourTextChange)
+    
+    public void ButtonTextChanges(string ButtonOneTextChange, string ButtonTwoTextChange, string ButtonThreeTextChange, string ButtonFourTextChange)
     {
         ButtonOneText.text = ButtonOneTextChange;
         ButtonTwoText.text = ButtonTwoTextChange;
@@ -47,12 +50,22 @@ public class TextChange : MonoBehaviour
         ButtonFourText.text = ButtonFourTextChange;
     }
 
-    private void ButtonActivationChanges(bool buttonOneActive, bool ButtonTwoActive, bool buttonThreeActive, bool ButtonFourActive)
+    public void ButtonActivationChanges(bool buttonOneActive, bool ButtonTwoActive, bool buttonThreeActive, bool ButtonFourActive)
     {
         ButtonOne.gameObject.SetActive(buttonOneActive);
         ButtonTwo.gameObject.SetActive(ButtonTwoActive);
         ButtonThree.gameObject.SetActive(buttonThreeActive);
         ButtonFour.gameObject.SetActive(ButtonFourActive);
+    }
+
+    //I need to hook this up to the pages options
+    //I need to make options to turn the pages differently based on inventory
+    public void InventoryChange(string itemToAdd, string itemToRemove)
+    {
+        StatisticsTrackerObject.inventoryItems.Add(itemToAdd);
+        StatisticsTrackerObject.inventoryItems.Remove(itemToRemove);
+        string inventoryAsString = string.Join(",", StatisticsTrackerObject.inventoryItems);
+        InventoryText.text = "Inventory: " + inventoryAsString;
     }
 
 
@@ -116,7 +129,12 @@ public class TextChange : MonoBehaviour
         //then we put in the information about which buttons are activated/deactivated
         currentPage.PageOnFailureButtonOne.buttonOneVisible, currentPage.PageOnFailureButtonOne.buttonTwoVisible, currentPage.PageOnFailureButtonOne.buttonThreeVisible, currentPage.PageOnFailureButtonOne.buttonFourVisible,
         //then we put in the information about what the text on buttons changes to be
-        currentPage.PageOnFailureButtonOne.buttonOneText, currentPage.PageOnFailureButtonOne.buttonTwoText, currentPage.PageOnFailureButtonOne.buttonThreeText, currentPage.PageOnFailureButtonOne.buttonFourText);
+        currentPage.PageOnFailureButtonOne.buttonOneText, currentPage.PageOnFailureButtonOne.buttonTwoText, currentPage.PageOnFailureButtonOne.buttonThreeText, currentPage.PageOnFailureButtonOne.buttonFourText,
+        //These deal with what buttons might be aded or taken away
+        currentPage.PageOnFailureButtonOne.gainItemButtonOne, currentPage.PageOnFailureButtonOne.loseItemButtonOne
+        );
+        
+        
     }
 
     private void ChangesOnButtonOneSucsess()
@@ -128,7 +146,10 @@ public class TextChange : MonoBehaviour
             //then we put in the information about which buttons are activated/deactivated
             currentPage.buttonOnePageTo.buttonOneVisible, currentPage.buttonOnePageTo.buttonTwoVisible, currentPage.buttonOnePageTo.buttonThreeVisible, currentPage.buttonOnePageTo.buttonFourVisible,
             //then we put in the information about what the text on buttons changes to be
-            currentPage.buttonOnePageTo.buttonOneText, currentPage.buttonOnePageTo.buttonTwoText, currentPage.buttonOnePageTo.buttonThreeText, currentPage.buttonOnePageTo.buttonFourText);
+            currentPage.buttonOnePageTo.buttonOneText, currentPage.buttonOnePageTo.buttonTwoText, currentPage.buttonOnePageTo.buttonThreeText, currentPage.buttonOnePageTo.buttonFourText,
+            //These deal with what buttons might be aded or taken away
+            currentPage.buttonOnePageTo.gainItemButtonOne, currentPage.buttonOnePageTo.loseItemButtonOne
+            );
     }
 
 
@@ -194,7 +215,10 @@ public class TextChange : MonoBehaviour
 
             currentPage.buttonTwoPageTo.buttonOneVisible, currentPage.buttonTwoPageTo.buttonTwoVisible, currentPage.buttonTwoPageTo.buttonThreeVisible, currentPage.buttonTwoPageTo.buttonFourVisible, 
             
-            currentPage.buttonTwoPageTo.buttonOneText, currentPage.buttonTwoPageTo.buttonTwoText, currentPage.buttonTwoPageTo.buttonThreeText, currentPage.buttonTwoPageTo.buttonFourText);
+            currentPage.buttonTwoPageTo.buttonOneText, currentPage.buttonTwoPageTo.buttonTwoText, currentPage.buttonTwoPageTo.buttonThreeText, currentPage.buttonTwoPageTo.buttonFourText,
+            //These deal with what buttons might be aded or taken away
+            currentPage.buttonTwoPageTo.gainItemButtonTwo, currentPage.buttonTwoPageTo.loseItemButtonTwo
+            );
     }
 
     private void ChangesOnButtonTwoFailure()
@@ -205,7 +229,10 @@ public class TextChange : MonoBehaviour
         //then we put in the information about which buttons are activated/deactivated
         currentPage.PageOnFailureButtonTwo.buttonOneVisible, currentPage.PageOnFailureButtonTwo.buttonTwoVisible, currentPage.PageOnFailureButtonTwo.buttonThreeVisible, currentPage.PageOnFailureButtonTwo.buttonFourVisible,
         //then we put in the information about what the text on buttons changes to be
-        currentPage.PageOnFailureButtonTwo.buttonOneText, currentPage.PageOnFailureButtonTwo.buttonTwoText, currentPage.PageOnFailureButtonTwo.buttonThreeText, currentPage.PageOnFailureButtonTwo.buttonFourText);
+        currentPage.PageOnFailureButtonTwo.buttonOneText, currentPage.PageOnFailureButtonTwo.buttonTwoText, currentPage.PageOnFailureButtonTwo.buttonThreeText, currentPage.PageOnFailureButtonTwo.buttonFourText,
+        //These deal with what buttons might be aded or taken away
+        currentPage.PageOnFailureButtonTwo.gainItemButtonTwo, currentPage.PageOnFailureButtonTwo.loseItemButtonTwo
+        );
     }
 
 
@@ -270,7 +297,10 @@ public class TextChange : MonoBehaviour
         //then we put in the information about which buttons are activated/deactivated
         currentPage.PageOnFailureButtonThree.buttonOneVisible, currentPage.PageOnFailureButtonThree.buttonTwoVisible, currentPage.PageOnFailureButtonThree.buttonThreeVisible, currentPage.PageOnFailureButtonThree.buttonFourVisible,
         //then we put in the information about what the text on buttons changes to be
-        currentPage.PageOnFailureButtonThree.buttonOneText, currentPage.PageOnFailureButtonThree.buttonTwoText, currentPage.PageOnFailureButtonThree.buttonThreeText, currentPage.PageOnFailureButtonThree.buttonFourText);
+        currentPage.PageOnFailureButtonThree.buttonOneText, currentPage.PageOnFailureButtonThree.buttonTwoText, currentPage.PageOnFailureButtonThree.buttonThreeText, currentPage.PageOnFailureButtonThree.buttonFourText,
+        //These deal with what buttons might be aded or taken away
+        currentPage.PageOnFailureButtonThree.gainItemButtonThree, currentPage.PageOnFailureButtonThree.loseItemButtonThree
+        );
     }
 
 
@@ -283,7 +313,10 @@ public class TextChange : MonoBehaviour
             //then we put in the information about which buttons are activated/deactivated
             currentPage.buttonThreePageTo.buttonOneVisible, currentPage.buttonThreePageTo.buttonTwoVisible, currentPage.buttonThreePageTo.buttonThreeVisible, currentPage.buttonThreePageTo.buttonFourVisible,
             //then we put in the information about what the text on buttons changes to be
-            currentPage.buttonThreePageTo.buttonOneText, currentPage.buttonThreePageTo.buttonTwoText, currentPage.buttonThreePageTo.buttonThreeText, currentPage.buttonThreePageTo.buttonFourText);
+            currentPage.buttonThreePageTo.buttonOneText, currentPage.buttonThreePageTo.buttonTwoText, currentPage.buttonThreePageTo.buttonThreeText, currentPage.buttonThreePageTo.buttonFourText,
+            //These deal with what buttons might be aded or taken away
+            currentPage.buttonThreePageTo.gainItemButtonThree, currentPage.buttonThreePageTo.loseItemButtonThree
+            );
     }
 
 
@@ -352,7 +385,10 @@ public class TextChange : MonoBehaviour
             //then we put in the information about which buttons are activated/deactivated
             currentPage.buttonFourPageTo.buttonOneVisible, currentPage.buttonFourPageTo.buttonTwoVisible, currentPage.buttonFourPageTo.buttonThreeVisible, currentPage.buttonFourPageTo.buttonFourVisible,
             //then we put in the information about what the text on buttons changes to be
-            currentPage.buttonFourPageTo.buttonOneText, currentPage.buttonFourPageTo.buttonTwoText, currentPage.buttonFourPageTo.buttonThreeText, currentPage.buttonFourPageTo.buttonFourText);
+            currentPage.buttonFourPageTo.buttonOneText, currentPage.buttonFourPageTo.buttonTwoText, currentPage.buttonFourPageTo.buttonThreeText, currentPage.buttonFourPageTo.buttonFourText,
+            //These deal with what buttons might be aded or taken away
+            currentPage.buttonFourPageTo.gainItemButtonFour, currentPage.buttonFourPageTo.loseItemButtonFour
+            );
     }
 
     private void ChangesOnButtonFourFailure()
@@ -363,7 +399,10 @@ public class TextChange : MonoBehaviour
         //then we put in the information about which buttons are activated/deactivated
         currentPage.PageOnFailureButtonFour.buttonOneVisible, currentPage.PageOnFailureButtonFour.buttonTwoVisible, currentPage.PageOnFailureButtonFour.buttonThreeVisible, currentPage.PageOnFailureButtonFour.buttonFourVisible,
         //then we put in the information about what the text on buttons changes to be
-        currentPage.PageOnFailureButtonFour.buttonOneText, currentPage.PageOnFailureButtonFour.buttonTwoText, currentPage.PageOnFailureButtonFour.buttonThreeText, currentPage.PageOnFailureButtonFour.buttonFourText);
+        currentPage.PageOnFailureButtonFour.buttonOneText, currentPage.PageOnFailureButtonFour.buttonTwoText, currentPage.PageOnFailureButtonFour.buttonThreeText, currentPage.PageOnFailureButtonFour.buttonFourText,
+        //These deal with what buttons might be aded or taken away
+        currentPage.PageOnFailureButtonFour.gainItemButtonFour, currentPage.PageOnFailureButtonFour.loseItemButtonFour
+        );
     }
 
 }
