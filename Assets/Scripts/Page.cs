@@ -14,7 +14,7 @@ public class Page : ScriptableObject
     [Header("Page Texts")]
     public string pageName;
     public string description;
-    
+
 
     [Header("Text On Buttons")]
     //these will track what each button will say
@@ -46,41 +46,24 @@ public class Page : ScriptableObject
     public int neededToPassButtonOne;
     public Page PageOnFailureButtonOne;
 
-    [Header("Button 1 Items Pass/Fail")]
-    public string itemToSucceedButtonOne;
-    public string gainItemButtonOne;
-    public string loseItemButtonOne;
-
     [Header("Button 2 Stat Pass/Fail")]
     public StatType statToTestButtonTwo;
     public int neededToPassButtonTwo;
     public Page PageOnFailureButtonTwo;
-
-    [Header("Button 2 Items Pass/Fail")]
-    public string itemToSucceedButtonTwo;
-    public string gainItemButtonTwo;
-    public string loseItemButtonTwo;
-
 
     [Header("Button 3 Stat Pass/Fail")]
     public StatType statToTestButtonThree;
     public int neededToPassButtonThree;
     public Page PageOnFailureButtonThree;
 
-    [Header("Button 4 Items Pass/Fail")]
-    public string itemToSucceedButtonThree;
-    public string gainItemButtonThree;
-    public string loseItemButtonThree;
-
     [Header("Button 4 Stat Pass/Fail")]
     public StatType statToTestButtonFour;
     public int neededToPassButtonFour;
     public Page PageOnFailureButtonFour;
 
-    [Header("Button 4 Items Pass/Fail")]
-    public string itemToSucceedButtonFour;
-    public string gainItemButtonFour;
-    public string loseItemButtonFour;
+    [Header("Items")]
+    public string gainItem;
+    public string loseItem;
 
 
 
