@@ -44,21 +44,25 @@ public class Page : ScriptableObject
     [Header("Button 1 Stat Pass/Fail")]
     public StatType statToTestButtonOne;
     public int neededToPassButtonOne;
+    public string itemToPassButtonOne;
     public Page PageOnFailureButtonOne;
 
     [Header("Button 2 Stat Pass/Fail")]
     public StatType statToTestButtonTwo;
     public int neededToPassButtonTwo;
+    public string itemToPassButtonTwo;
     public Page PageOnFailureButtonTwo;
 
     [Header("Button 3 Stat Pass/Fail")]
     public StatType statToTestButtonThree;
     public int neededToPassButtonThree;
+    public string itemToPassButtonThree;
     public Page PageOnFailureButtonThree;
 
     [Header("Button 4 Stat Pass/Fail")]
     public StatType statToTestButtonFour;
     public int neededToPassButtonFour;
+    public string itemToPassButtonFour;
     public Page PageOnFailureButtonFour;
 
     [Header("Items")]

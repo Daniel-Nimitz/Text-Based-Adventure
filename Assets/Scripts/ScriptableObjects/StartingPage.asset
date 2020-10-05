@@ -50,25 +50,19 @@ MonoBehaviour:
   amountToChangeStatBy: 0
   statToTestButtonOne: 0
   neededToPassButtonOne: 0
-  PageOnFailureButtonOne: {fileID: 0}
-  itemToSucceedButtonOne: 
-  gainItemButtonOne: Newspaper
-  loseItemButtonOne: Sword
+  itemToPassButtonOne: Cheese
+  PageOnFailureButtonOne: {fileID: 11400000, guid: 340d164c7d759734fbf951bda7c5de31, type: 2}
   statToTestButtonTwo: 0
   neededToPassButtonTwo: 0
+  itemToPassButtonTwo: 
   PageOnFailureButtonTwo: {fileID: 0}
-  itemToSucceedButtonTwo: 
-  gainItemButtonTwo: 
-  loseItemButtonTwo: 
   statToTestButtonThree: 1
   neededToPassButtonThree: 100
+  itemToPassButtonThree: 
   PageOnFailureButtonThree: {fileID: 11400000, guid: fb5865be8114b6c419f54698e579f23f, type: 2}
-  itemToSucceedButtonThree: 
-  gainItemButtonThree: 
-  loseItemButtonThree: 
-  statToTestButtonFour: 3
-  neededToPassButtonFour: 100
+  statToTestButtonFour: 0
+  neededToPassButtonFour: 0
+  itemToPassButtonFour: Cheese
   PageOnFailureButtonFour: {fileID: 11400000, guid: 7f7505de4c293ea4aab545875cba7510, type: 2}
-  itemToSucceedButtonFour: 
-  gainItemButtonFour: 
-  loseItemButtonFour: 
+  gainItem: 
+  loseItem: 

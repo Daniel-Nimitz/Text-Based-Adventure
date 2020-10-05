@@ -71,52 +71,63 @@ public class TextChange : MonoBehaviour
 
     public void ButtonOneChoosePageAndFlip() 
     {
-        switch (currentPage.statToTestButtonOne)
+        if (StatisticsTrackerObject.inventoryItems.Contains(currentPage.itemToPassButtonOne) || currentPage.itemToPassButtonOne == "")
         {
-            case StatType.Strength:
+            switch (currentPage.statToTestButtonOne)
+            {
+                case StatType.Strength:
 
-                if (StatisticsTrackerObject.strength > currentPage.neededToPassButtonOne)
-                {
+                    if (StatisticsTrackerObject.strength > currentPage.neededToPassButtonOne)
+                    {
+                        ChangesOnButtonOneSucsess();
+                    }
+                    else if (StatisticsTrackerObject.strength <= currentPage.neededToPassButtonOne)
+                    {
+                        ChangesOnButtonOneFailure();
+                    }
+                    break;
+
+                case StatType.Arcana:
+
+                    if (StatisticsTrackerObject.arcana > currentPage.neededToPassButtonOne)
+                    {
+                        ChangesOnButtonOneSucsess();
+                    }
+                    else if (StatisticsTrackerObject.arcana <= currentPage.neededToPassButtonOne)
+                    {
+                        ChangesOnButtonOneFailure();
+                    }
+                    break;
+
+                case StatType.Corruption:
+
+                    if (StatisticsTrackerObject.corruption > currentPage.neededToPassButtonOne)
+                    {
+                        ChangesOnButtonOneSucsess();
+                    }
+                    else if (StatisticsTrackerObject.corruption <= currentPage.neededToPassButtonOne)
+                    {
+                        ChangesOnButtonOneFailure();
+                    }
+                    break;
+
+                case StatType.None:
                     ChangesOnButtonOneSucsess();
-                }
-                else if (StatisticsTrackerObject.strength <= currentPage.neededToPassButtonOne)
-                {
-                    ChangesOnButtonOneFailure();
-                }
-                break;
+                    break;
 
-            case StatType.Arcana:
-
-                if (StatisticsTrackerObject.arcana > currentPage.neededToPassButtonOne)
-                {
-                    ChangesOnButtonOneSucsess();
-                }
-                else if (StatisticsTrackerObject.arcana <= currentPage.neededToPassButtonOne)
-                {
-                    ChangesOnButtonOneFailure();
-                }
-                break;
-
-            case StatType.Corruption:
-
-                if (StatisticsTrackerObject.corruption > currentPage.neededToPassButtonOne)
-                {
-                    ChangesOnButtonOneSucsess();
-                }
-                else if (StatisticsTrackerObject.corruption <= currentPage.neededToPassButtonOne)
-                {
-                    ChangesOnButtonOneFailure();
-                }
-                break;
-
-            case StatType.None:
-                    ChangesOnButtonOneSucsess();
-                break;
-
-            default:
-                print("Something has gone wrong, please let the developers know what was happening before you recieved this message." +
-                    "When checking wether one of your stats was too high or low for an action to be taken something went wrong.");
-                break;
+                default:
+                    print("Something has gone wrong, please let the developers know what was happening before you recieved this message." +
+                        "When checking wether one of your stats was too high or low for an action to be taken something went wrong.");
+                    break;
+            }
+        }
+        else if (!StatisticsTrackerObject.inventoryItems.Contains(currentPage.itemToPassButtonOne))
+        {
+            ChangesOnButtonOneFailure();
+        }
+        else { 
+        
+        print("Something went wrong with the item or stat check on button one.");
         }
         
     }
