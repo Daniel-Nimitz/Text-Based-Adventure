@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02ed0a86165e4a340b328c4279c03a8a, type: 3}
   m_Name: Page1
   m_EditorClassIdentifier: 
-  pageName: You are on PAge One, You shouold have gained "Tent" and Lost "Sword"
+  pageName: You are on Page One, You shouold have gained "Tent" and Lost "Sword"
   description: You are now on Page 1
   buttonOneText: Page 1 choice 1
   buttonTwoText: Page 1 choice 2
@@ -30,15 +30,19 @@ MonoBehaviour:
   amountToChangeStatBy: 0
   statToTestButtonOne: 0
   neededToPassButtonOne: 0
+  itemToPassButtonOne: 
   PageOnFailureButtonOne: {fileID: 0}
-  statToTestButtonTwo: 0
-  neededToPassButtonTwo: 0
-  PageOnFailureButtonTwo: {fileID: 0}
+  statToTestButtonTwo: 1
+  neededToPassButtonTwo: 10
+  itemToPassButtonTwo: 
+  PageOnFailureButtonTwo: {fileID: 11400000, guid: fb5865be8114b6c419f54698e579f23f, type: 2}
   statToTestButtonThree: 0
   neededToPassButtonThree: 0
+  itemToPassButtonThree: 
   PageOnFailureButtonThree: {fileID: 0}
   statToTestButtonFour: 0
   neededToPassButtonFour: 0
+  itemToPassButtonFour: 
   PageOnFailureButtonFour: {fileID: 0}
   gainItem: Tent
   loseItem: Sword
