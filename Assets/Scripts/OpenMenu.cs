@@ -7,6 +7,7 @@ public class OpenMenu : MonoBehaviour
 {
     public GameObject MenuCanvas;
     public GameObject StatisticsMenu;
+    public GameObject AreYouSureMenu;
 
     
 
@@ -43,4 +44,15 @@ public class OpenMenu : MonoBehaviour
     {
         StatisticsMenu.SetActive(false);
     }
+    
+    public void CloseAreYouSureMenu()
+    {
+        AreYouSureMenu.SetActive(false);
+    }
+
+    public void OpenRestartCheckMenu() {
+
+        AreYouSureMenu.SetActive(true);
+    }
+
 }
