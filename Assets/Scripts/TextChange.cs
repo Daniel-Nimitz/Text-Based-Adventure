@@ -162,52 +162,64 @@ public class TextChange : MonoBehaviour
 
     public void ButtonTwoChoosePageAndFlip()
     {
-        switch (currentPage.statToTestButtonOne)
+        if (StatisticsTrackerObject.inventoryItems.Contains(currentPage.itemToPassButtonTwo) || currentPage.itemToPassButtonTwo == "")
         {
-            case StatType.Strength:
+            switch (currentPage.statToTestButtonTwo)
+            {
+                case StatType.Strength:
 
-                if (StatisticsTrackerObject.strength > currentPage.neededToPassButtonTwo)
-                {
+                    if (StatisticsTrackerObject.strength >= currentPage.neededToPassButtonTwo)
+                    {
+                        ChangesOnButtonTwoSucsess();
+                    }
+                    else if (StatisticsTrackerObject.strength < currentPage.neededToPassButtonTwo)
+                    {
+                        ChangesOnButtonTwoFailure();
+                    }
+                    break;
+
+                case StatType.Arcana:
+
+                    if (StatisticsTrackerObject.arcana >= currentPage.neededToPassButtonTwo)
+                    {
+                        ChangesOnButtonTwoSucsess();
+                    }
+                    else if (StatisticsTrackerObject.arcana < currentPage.neededToPassButtonTwo)
+                    {
+                        ChangesOnButtonTwoFailure();
+                    }
+                    break;
+
+                case StatType.Corruption:
+
+                    if (StatisticsTrackerObject.corruption >= currentPage.neededToPassButtonTwo)
+                    {
+                        ChangesOnButtonTwoSucsess();
+                    }
+                    else if (StatisticsTrackerObject.corruption < currentPage.neededToPassButtonTwo)
+                    {
+                        ChangesOnButtonTwoFailure();
+                    }
+                    break;
+
+                case StatType.None:
                     ChangesOnButtonTwoSucsess();
-                }
-                else if (StatisticsTrackerObject.strength <= currentPage.neededToPassButtonTwo)
-                {
-                    ChangesOnButtonTwoFailure();
-                }
-                break;
+                    break;
 
-            case StatType.Arcana:
+                default:
+                    print("Something has gone wrong, please let the developers know what was happening before you recieved this message." +
+                        "When checking wether one of your stats was too high or low for an action to be taken on after pressing button 2 something went wrong.");
+                    break;
+            }
 
-                if (StatisticsTrackerObject.arcana > currentPage.neededToPassButtonTwo)
-                {
-                    ChangesOnButtonTwoSucsess();
-                }
-                else if (StatisticsTrackerObject.arcana <= currentPage.neededToPassButtonTwo)
-                {
-                    ChangesOnButtonTwoFailure();
-                }
-                break;
-
-            case StatType.Corruption:
-
-                if (StatisticsTrackerObject.corruption > currentPage.neededToPassButtonTwo)
-                {
-                    ChangesOnButtonTwoSucsess();
-                }
-                else if (StatisticsTrackerObject.corruption <= currentPage.neededToPassButtonTwo)
-                {
-                    ChangesOnButtonTwoFailure();
-                }
-                break;
-
-            case StatType.None:
-                ChangesOnButtonTwoSucsess();
-                break;
-
-            default:
-                print("Something has gone wrong, please let the developers know what was happening before you recieved this message." +
-                    "When checking wether one of your stats was too high or low for an action to be taken on after pressing button 2 something went wrong.");
-                break;
+        }
+        else if (!StatisticsTrackerObject.inventoryItems.Contains(currentPage.itemToPassButtonTwo))
+        {
+            ChangesOnButtonTwoFailure();
+        }
+        else
+        {
+            print("Something went wrong with the item or stat check on button one.  Probably based on the item check.");
         }
 
     }
@@ -245,52 +257,64 @@ public class TextChange : MonoBehaviour
 
     public void ButtonThreeChoosePageAndFlip()
     {
-        switch (currentPage.statToTestButtonThree)
+        if (StatisticsTrackerObject.inventoryItems.Contains(currentPage.itemToPassButtonThree) || currentPage.itemToPassButtonThree == "")
         {
-            case StatType.Strength:
+            switch (currentPage.statToTestButtonThree)
+            {
+                case StatType.Strength:
 
-                if (StatisticsTrackerObject.strength > currentPage.neededToPassButtonThree)
-                {
+                    if (StatisticsTrackerObject.strength >= currentPage.neededToPassButtonThree)
+                    {
+                        ChangesOnButtonThreeSucsess();
+                    }
+                    else if (StatisticsTrackerObject.strength < currentPage.neededToPassButtonThree)
+                    {
+                        ChangesOnButtonThreeFailure();
+                    }
+                    break;
+
+                case StatType.Arcana:
+
+                    if (StatisticsTrackerObject.arcana >= currentPage.neededToPassButtonThree)
+                    {
+                        ChangesOnButtonThreeSucsess();
+                    }
+                    else if (StatisticsTrackerObject.arcana < currentPage.neededToPassButtonThree)
+                    {
+                        ChangesOnButtonThreeFailure();
+                    }
+                    break;
+
+                case StatType.Corruption:
+
+                    if (StatisticsTrackerObject.corruption >= currentPage.neededToPassButtonThree)
+                    {
+                        ChangesOnButtonThreeSucsess();
+                    }
+                    else if (StatisticsTrackerObject.corruption < currentPage.neededToPassButtonThree)
+                    {
+                        ChangesOnButtonThreeFailure();
+                    }
+                    break;
+
+                case StatType.None:
                     ChangesOnButtonThreeSucsess();
-                }
-                else if (StatisticsTrackerObject.strength <= currentPage.neededToPassButtonThree)
-                {
-                    ChangesOnButtonThreeFailure();
-                }
-                break;
+                    break;
 
-            case StatType.Arcana:
+                default:
+                    print("Something has gone wrong, please let the developers know what was happening before you recieved this message." +
+                        "When checking wether one of your stats was too high or low for an action to be taken on after pressing button 2 something went wrong.");
+                    break;
+            }
+        }
+        else if (!StatisticsTrackerObject.inventoryItems.Contains(currentPage.itemToPassButtonThree))
+        {
+            ChangesOnButtonThreeFailure();
+        }
+        else
+        {
 
-                if (StatisticsTrackerObject.arcana > currentPage.neededToPassButtonThree)
-                {
-                    ChangesOnButtonThreeSucsess();
-                }
-                else if (StatisticsTrackerObject.arcana <= currentPage.neededToPassButtonThree)
-                {
-                    ChangesOnButtonThreeFailure();
-                }
-                break;
-
-            case StatType.Corruption:
-
-                if (StatisticsTrackerObject.corruption > currentPage.neededToPassButtonThree)
-                {
-                    ChangesOnButtonThreeSucsess();
-                }
-                else if (StatisticsTrackerObject.corruption <= currentPage.neededToPassButtonThree)
-                {
-                    ChangesOnButtonThreeFailure();
-                }
-                break;
-
-            case StatType.None:
-                ChangesOnButtonThreeSucsess();
-                break;
-
-            default:
-                print("Something has gone wrong, please let the developers know what was happening before you recieved this message." +
-                    "When checking wether one of your stats was too high or low for an action to be taken on after pressing button 2 something went wrong.");
-                break;
+            print("Something went wrong with the item or stat check on button one.");
         }
 
     }
@@ -328,52 +352,64 @@ public class TextChange : MonoBehaviour
 
     public void ButtonFourChoosePageAndFlip()
     {
-        switch (currentPage.statToTestButtonFour)
+        if (StatisticsTrackerObject.inventoryItems.Contains(currentPage.itemToPassButtonFour) || currentPage.itemToPassButtonFour == "")
         {
-            case StatType.Strength:
+            switch (currentPage.statToTestButtonFour)
+            {
+                case StatType.Strength:
 
-                if (StatisticsTrackerObject.strength > currentPage.neededToPassButtonFour)
-                {
-                    ChangesOnButtonThreeSucsess();
-                }
-                else if (StatisticsTrackerObject.strength <= currentPage.neededToPassButtonFour)
-                {
-                    ChangesOnButtonThreeFailure();
-                }
-                break;
+                    if (StatisticsTrackerObject.strength >= currentPage.neededToPassButtonFour)
+                    {
+                        ChangesOnButtonThreeSucsess();
+                    }
+                    else if (StatisticsTrackerObject.strength < currentPage.neededToPassButtonFour)
+                    {
+                        ChangesOnButtonThreeFailure();
+                    }
+                    break;
 
-            case StatType.Arcana:
+                case StatType.Arcana:
 
-                if (StatisticsTrackerObject.arcana > currentPage.neededToPassButtonFour)
-                {
+                    if (StatisticsTrackerObject.arcana >= currentPage.neededToPassButtonFour)
+                    {
+                        ChangesOnButtonFourSucsess();
+                    }
+                    else if (StatisticsTrackerObject.arcana < currentPage.neededToPassButtonFour)
+                    {
+                        ChangesOnButtonFourFailure();
+                    }
+                    break;
+
+                case StatType.Corruption:
+
+                    if (StatisticsTrackerObject.corruption >= currentPage.neededToPassButtonFour)
+                    {
+                        ChangesOnButtonFourSucsess();
+                    }
+                    else if (StatisticsTrackerObject.corruption < currentPage.neededToPassButtonFour)
+                    {
+                        ChangesOnButtonFourFailure();
+                    }
+                    break;
+
+                case StatType.None:
                     ChangesOnButtonFourSucsess();
-                }
-                else if (StatisticsTrackerObject.arcana <= currentPage.neededToPassButtonFour)
-                {
-                    ChangesOnButtonFourFailure();
-                }
-                break;
+                    break;
 
-            case StatType.Corruption:
+                default:
+                    print("Something has gone wrong, please let the developers know what was happening before you recieved this message." +
+                        "When checking wether one of your stats was too high or low for an action to be taken on after pressing button 2 something went wrong.");
+                    break;
+            }
+        }
+        else if (!StatisticsTrackerObject.inventoryItems.Contains(currentPage.itemToPassButtonFour))
+        {
+            ChangesOnButtonFourFailure();
+        }
+        else
+        {
 
-                if (StatisticsTrackerObject.corruption > currentPage.neededToPassButtonFour)
-                {
-                    ChangesOnButtonFourSucsess();
-                }
-                else if (StatisticsTrackerObject.corruption <= currentPage.neededToPassButtonFour)
-                {
-                    ChangesOnButtonFourFailure();
-                }
-                break;
-
-            case StatType.None:
-                ChangesOnButtonFourSucsess();
-                break;
-
-            default:
-                print("Something has gone wrong, please let the developers know what was happening before you recieved this message." +
-                    "When checking wether one of your stats was too high or low for an action to be taken on after pressing button 2 something went wrong.");
-                break;
+            print("Something went wrong with the item or stat check on button one.");
         }
 
     }
