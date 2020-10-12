@@ -26,8 +26,8 @@ MonoBehaviour:
   buttonTwoPageTo: {fileID: 11400000, guid: 4081fb30f8af35a429fc789c17f75611, type: 2}
   buttonThreePageTo: {fileID: 11400000, guid: 7913e5fa4bcef57419b439e54a94602e, type: 2}
   buttonFourPageTo: {fileID: 11400000, guid: d2f685da710602441ae9be07540df6fa, type: 2}
-  StatChangeType: 0
-  amountToChangeStatBy: 0
+  StatChangeType: 3
+  amountToChangeStatBy: 70
   statToTestButtonOne: 0
   neededToPassButtonOne: 0
   itemToPassButtonOne: 

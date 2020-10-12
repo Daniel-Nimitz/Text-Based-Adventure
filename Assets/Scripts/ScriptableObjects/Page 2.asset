@@ -26,17 +26,23 @@ MonoBehaviour:
   buttonTwoPageTo: {fileID: 11400000, guid: 127b2af16579a5f428ca101035871306, type: 2}
   buttonThreePageTo: {fileID: 11400000, guid: f0913a7cd47a5f149918b4043a9eddb6, type: 2}
   buttonFourPageTo: {fileID: 0}
-  StatChangeType: 0
-  amountToChangeStatBy: 0
+  StatChangeType: 3
+  amountToChangeStatBy: 50
   statToTestButtonOne: 0
   neededToPassButtonOne: 0
+  itemToPassButtonOne: 
   PageOnFailureButtonOne: {fileID: 0}
   statToTestButtonTwo: 1
   neededToPassButtonTwo: 10
+  itemToPassButtonTwo: 
   PageOnFailureButtonTwo: {fileID: 0}
   statToTestButtonThree: 0
   neededToPassButtonThree: 0
+  itemToPassButtonThree: 
   PageOnFailureButtonThree: {fileID: 0}
   statToTestButtonFour: 0
   neededToPassButtonFour: 0
+  itemToPassButtonFour: 
   PageOnFailureButtonFour: {fileID: 0}
+  gainItem: 
+  loseItem: 

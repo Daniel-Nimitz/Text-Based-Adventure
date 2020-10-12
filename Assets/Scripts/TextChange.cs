@@ -35,10 +35,11 @@ public class TextChange : MonoBehaviour
 
         //Here we update the text for buttons
         ButtonTextChanges(ButtonOneTextChange, ButtonTwoTextChange, ButtonThreeTextChange, ButtonFourTextChange);
-
-
-       
+        
+        //here we check what items we should gain and lose and check if we passed a check based on items
         InventoryChange(currentPage.gainItem, currentPage.loseItem);
+
+        IncreaseOrDecreaseStats(currentPage.amountToChangeStatBy);
     }
 
     
@@ -67,6 +68,21 @@ public class TextChange : MonoBehaviour
         string inventoryAsString = string.Join(",", StatisticsTrackerObject.inventoryItems);
         InventoryText.text = "Inventory: " + inventoryAsString;
     }
+
+    public void IncreaseOrDecreaseStats(int howMuchToAddToStat) {
+        if (currentPage.StatChangeType == StatType.Strength) {
+            StatisticsTrackerObject.AddStrength(howMuchToAddToStat);
+        }
+        else if (currentPage.StatChangeType == StatType.Arcana) {
+            StatisticsTrackerObject.AddArcana(howMuchToAddToStat);
+        }
+
+        else if (currentPage.StatChangeType == StatType.Corruption) {
+            StatisticsTrackerObject.AddCorruption(howMuchToAddToStat);
+        }
+    }
+
+    
 
 
     public void ButtonOneChoosePageAndFlip() 
