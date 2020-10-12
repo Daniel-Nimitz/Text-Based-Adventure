@@ -37,7 +37,7 @@ public class TextChange : MonoBehaviour
         ButtonTextChanges(ButtonOneTextChange, ButtonTwoTextChange, ButtonThreeTextChange, ButtonFourTextChange);
         
         //here we check what items we should gain and lose and check if we passed a check based on items
-        InventoryChange(currentPage.gainItem, currentPage.loseItem);
+        ChangeImportantHappenings(currentPage.gainImportantHappening, currentPage.removeImportantHappening);
 
         IncreaseOrDecreaseStats(currentPage.amountToChangeStatBy);
     }
@@ -61,13 +61,16 @@ public class TextChange : MonoBehaviour
 
     //I need to hook this up to the pages options
     //I need to make options to turn the pages differently based on inventory
-    public void InventoryChange(string itemToAdd, string itemToRemove)
+    public void ChangeImportantHappenings(string itemToAdd, string itemToRemove)
     {
-        StatisticsTrackerObject.inventoryItems.Add(itemToAdd);
-        StatisticsTrackerObject.inventoryItems.Remove(itemToRemove);
-        string inventoryAsString = string.Join(",", StatisticsTrackerObject.inventoryItems);
+        StatisticsTrackerObject.importantHappeningsList.Add(itemToAdd);
+        StatisticsTrackerObject.importantHappeningsList.Remove(itemToRemove);
+        string inventoryAsString = string.Join(",", StatisticsTrackerObject.importantHappeningsList);
         InventoryText.text = "Inventory: " + inventoryAsString;
     }
+
+    
+    
 
     public void IncreaseOrDecreaseStats(int howMuchToAddToStat) {
         if (currentPage.StatChangeType == StatType.Strength) {
@@ -87,7 +90,7 @@ public class TextChange : MonoBehaviour
 
     public void ButtonOneChoosePageAndFlip() 
     {
-        if (StatisticsTrackerObject.inventoryItems.Contains(currentPage.itemToPassButtonOne) || currentPage.itemToPassButtonOne == "")
+        if (StatisticsTrackerObject.importantHappeningsList.Contains(currentPage.itemToPassButtonOne) || currentPage.itemToPassButtonOne == "")
         {
             switch (currentPage.statToTestButtonOne)
             {
@@ -137,7 +140,7 @@ public class TextChange : MonoBehaviour
                     break;
             }
         }
-        else if (!StatisticsTrackerObject.inventoryItems.Contains(currentPage.itemToPassButtonOne))
+        else if (!StatisticsTrackerObject.importantHappeningsList.Contains(currentPage.itemToPassButtonOne))
         {
             ChangesOnButtonOneFailure();
         }
@@ -178,7 +181,7 @@ public class TextChange : MonoBehaviour
 
     public void ButtonTwoChoosePageAndFlip()
     {
-        if (StatisticsTrackerObject.inventoryItems.Contains(currentPage.itemToPassButtonTwo) || currentPage.itemToPassButtonTwo == "")
+        if (StatisticsTrackerObject.importantHappeningsList.Contains(currentPage.itemToPassButtonTwo) || currentPage.itemToPassButtonTwo == "")
         {
             switch (currentPage.statToTestButtonTwo)
             {
@@ -229,7 +232,7 @@ public class TextChange : MonoBehaviour
             }
 
         }
-        else if (!StatisticsTrackerObject.inventoryItems.Contains(currentPage.itemToPassButtonTwo))
+        else if (!StatisticsTrackerObject.importantHappeningsList.Contains(currentPage.itemToPassButtonTwo))
         {
             ChangesOnButtonTwoFailure();
         }
@@ -273,7 +276,7 @@ public class TextChange : MonoBehaviour
 
     public void ButtonThreeChoosePageAndFlip()
     {
-        if (StatisticsTrackerObject.inventoryItems.Contains(currentPage.itemToPassButtonThree) || currentPage.itemToPassButtonThree == "")
+        if (StatisticsTrackerObject.importantHappeningsList.Contains(currentPage.itemToPassButtonThree) || currentPage.itemToPassButtonThree == "")
         {
             switch (currentPage.statToTestButtonThree)
             {
@@ -323,7 +326,7 @@ public class TextChange : MonoBehaviour
                     break;
             }
         }
-        else if (!StatisticsTrackerObject.inventoryItems.Contains(currentPage.itemToPassButtonThree))
+        else if (!StatisticsTrackerObject.importantHappeningsList.Contains(currentPage.itemToPassButtonThree))
         {
             ChangesOnButtonThreeFailure();
         }
@@ -368,7 +371,7 @@ public class TextChange : MonoBehaviour
 
     public void ButtonFourChoosePageAndFlip()
     {
-        if (StatisticsTrackerObject.inventoryItems.Contains(currentPage.itemToPassButtonFour) || currentPage.itemToPassButtonFour == "")
+        if (StatisticsTrackerObject.importantHappeningsList.Contains(currentPage.itemToPassButtonFour) || currentPage.itemToPassButtonFour == "")
         {
             switch (currentPage.statToTestButtonFour)
             {
@@ -418,7 +421,7 @@ public class TextChange : MonoBehaviour
                     break;
             }
         }
-        else if (!StatisticsTrackerObject.inventoryItems.Contains(currentPage.itemToPassButtonFour))
+        else if (!StatisticsTrackerObject.importantHappeningsList.Contains(currentPage.itemToPassButtonFour))
         {
             ChangesOnButtonFourFailure();
         }

@@ -25,13 +25,16 @@ using UnityEngine.UI;
     
 
         public Text InventoryText;
+        public Text ChoiceTraitText;
 
-        public List<string> inventoryItems = new List<string>();
+        public List<string> importantHappeningsList = new List<string>();
+
+        public List<string> choiceTraits = new List<string>();
 
     private void Awake()
     {
         SetInitialPlayerStats();
-        CreateInitialInventory();
+        CreateInitialImportantHappenings();
     }
 
         public void AddStrength(int strengthToAdd)
@@ -68,12 +71,13 @@ using UnityEngine.UI;
     }
 
 
-        private void CreateInitialInventory() {
-            inventoryItems.Add("Backpack");
-            inventoryItems.Add("Armor");
-            inventoryItems.Add("Sword");
-            string inventoryAsString = string.Join(",", inventoryItems);
-            InventoryText.text = "Inventory: " + inventoryAsString;
+        private void CreateInitialImportantHappenings() {
+            importantHappeningsList.Add("Backpack");
+            importantHappeningsList.Add("Armor");
+            importantHappeningsList.Add("Sword");
+            string inventoryAsString = string.Join(",", importantHappeningsList);
+            InventoryText.text = "Important Happenings: " + inventoryAsString;
 
     }
+ 
     }

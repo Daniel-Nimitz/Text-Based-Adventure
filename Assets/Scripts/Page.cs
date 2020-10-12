@@ -65,9 +65,9 @@ public class Page : ScriptableObject
     public string itemToPassButtonFour;
     public Page PageOnFailureButtonFour;
 
-    [Header("Items")]
-    public string gainItem;
-    public string loseItem;
+    [Header("Important Happenings")]
+    public string gainImportantHappening;
+    public string removeImportantHappening;
 
 
 

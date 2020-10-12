@@ -3908,7 +3908,9 @@ MonoBehaviour:
   maxArcana: 10
   maxCorruption: 100
   InventoryText: {fileID: 1717049189}
-  inventoryItems: []
+  ChoiceTraitText: {fileID: 0}
+  importantHappeningsList: []
+  choiceTraits: []
 --- !u!4 &1358623302
 Transform:
   m_ObjectHideFlags: 0
@@ -5212,7 +5214,7 @@ GameObject:
   - component: {fileID: 1717049190}
   - component: {fileID: 1717049189}
   m_Layer: 5
-  m_Name: Inventory Text
+  m_Name: Important Happenings Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5270,7 +5272,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Inventory: What it do bb'
+  m_Text: 'Important Happenings: What it do bb'
 --- !u!222 &1717049190
 CanvasRenderer:
   m_ObjectHideFlags: 0
