@@ -8,6 +8,7 @@ public class OpenMenu : MonoBehaviour
     public GameObject MenuCanvas;
     public GameObject StatisticsMenu;
     public GameObject AreYouSureMenu;
+    public GameObject OptionsMenu;
 
     
 
@@ -55,4 +56,12 @@ public class OpenMenu : MonoBehaviour
         AreYouSureMenu.SetActive(true);
     }
 
+    public void OpenOptionsMenu() {
+        OptionsMenu.SetActive(true);
+    }
+    
+    public void CloseOptionsMenu()
+    {
+        OptionsMenu.SetActive(false);
+    }
 }
