@@ -14,7 +14,7 @@ using UnityEngine.UI;
         public Text StrengthText;
         public Text ArcanaText;
         public Text CorruptionText;
-
+    //add these three stats to the easy save system
         public int strength;
         public int arcana;
         public int corruption;
@@ -27,6 +27,7 @@ using UnityEngine.UI;
         public Text InventoryText;
         public Text ChoiceTraitText;
 
+    //Add these two lists to the easy save files
         public List<string> importantHappeningsList = new List<string>();
 
         public List<string> choiceTraits = new List<string>();

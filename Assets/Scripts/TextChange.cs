@@ -19,6 +19,7 @@ public class TextChange : MonoBehaviour
     public TextMeshProUGUI ButtonThreeText;
     public TextMeshProUGUI ButtonFourText;
 
+    //Add the currentPage to the Stat Tracker
     public Page currentPage;
 
     public StatTracker StatisticsTrackerObject;
