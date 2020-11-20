@@ -24,6 +24,8 @@ public class TextChange : MonoBehaviour
 
     public StatTracker StatisticsTrackerObject;
 
+    public SimpleSave SaveScript;
+
 
     public void ChangeOnButtonPress(Page buttonPagesTo, bool buttonOneActive, bool ButtonTwoActive, bool buttonThreeActive, bool ButtonFourActive, string ButtonOneTextChange, string ButtonTwoTextChange, string ButtonThreeTextChange, string ButtonFourTextChange)
     {
@@ -41,6 +43,8 @@ public class TextChange : MonoBehaviour
         ChangeImportantHappenings(currentPage.gainImportantHappening, currentPage.removeImportantHappening);
 
         IncreaseOrDecreaseStats(currentPage.amountToChangeStatBy);
+        //We save each time we turn a page
+        SaveScript.Save();
     }
 
     
