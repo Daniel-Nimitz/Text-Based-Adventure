@@ -26,6 +26,11 @@ public class TextChange : MonoBehaviour
 
     public SimpleSave SaveScript;
 
+    private void Awake()
+    {
+        //need to add something which sets the initial text for the current page
+        mainText.text = currentPage.description;
+    }
 
     public void ChangeOnButtonPress(Page buttonPagesTo, bool buttonOneActive, bool ButtonTwoActive, bool buttonThreeActive, bool ButtonFourActive, string ButtonOneTextChange, string ButtonTwoTextChange, string ButtonThreeTextChange, string ButtonFourTextChange)
     {
