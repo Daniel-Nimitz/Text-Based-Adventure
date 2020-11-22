@@ -49,7 +49,7 @@ public class TextChange : MonoBehaviour
 
         IncreaseOrDecreaseStats(currentPage.amountToChangeStatBy);
         //We save each time we turn a page
-        SaveScript.Save();
+        //SaveScript.Save();
     }
 
     

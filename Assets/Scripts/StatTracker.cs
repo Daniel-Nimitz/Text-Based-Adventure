@@ -26,6 +26,7 @@ using UnityEngine.UI;
 
         public Text InventoryText;
         public Text ChoiceTraitText;
+ 
 
     //Add these two lists to the easy save files
         public List<string> importantHappeningsList = new List<string>();
@@ -36,6 +37,7 @@ using UnityEngine.UI;
     {
         SetInitialPlayerStats();
         CreateInitialImportantHappenings();
+
     }
 
         public void AddStrength(int strengthToAdd)
@@ -80,5 +82,6 @@ using UnityEngine.UI;
             InventoryText.text = "Important Happenings: " + inventoryAsString;
 
     }
+    
  
     }

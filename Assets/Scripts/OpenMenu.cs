@@ -32,8 +32,8 @@ public class OpenMenu : MonoBehaviour
     }
 
     public void ReloadScene() {
-        Scene scene = SceneManager.GetActiveScene(); 
-        SceneManager.LoadScene(scene.name);
+        Scene currentScene = SceneManager.GetActiveScene(); 
+        SceneManager.LoadScene(currentScene.name);
 
     }
 

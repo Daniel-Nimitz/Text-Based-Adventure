@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class SimpleSave : MonoBehaviour
@@ -16,5 +17,15 @@ public class SimpleSave : MonoBehaviour
         ES3.Save("strength", statTrackerScript.strength);
         ES3.Save("corruption", statTrackerScript.corruption);
         ES3.Save("arcana", statTrackerScript.arcana);
+
+        ES3.Save("importantHappeningsList", statTrackerScript.importantHappeningsList);
+        ES3.Save("choiceTraits", statTrackerScript.choiceTraits);
+
+        //Information about which page the player was on when saving is stored by looking at TextChange.cs
+        ES3.Save("currentPage", textChangeScript.currentPage);
+
+        //Save the current scene
+        ES3.Save(SceneManager.GetActiveScene().name, "currentScene");
+        Debug.Log("Save funtion was called");
     }
 }
