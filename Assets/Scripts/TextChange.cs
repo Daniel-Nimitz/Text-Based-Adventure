@@ -443,7 +443,6 @@ public class TextChange : MonoBehaviour
 
     }
 
-   
 
     public void ChangesOnButtonFourSucsess()
     {
