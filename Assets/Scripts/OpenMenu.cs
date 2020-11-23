@@ -64,4 +64,7 @@ public class OpenMenu : MonoBehaviour
     {
         OptionsMenu.SetActive(false);
     }
+    public void LoadMainMenuScene() {
+        SceneManager.LoadScene("TitleScreen");
+    }
 }
