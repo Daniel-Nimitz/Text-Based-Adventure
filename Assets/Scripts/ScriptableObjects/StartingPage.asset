@@ -64,5 +64,5 @@ MonoBehaviour:
   neededToPassButtonFour: 0
   itemToPassButtonFour: Cheese
   PageOnFailureButtonFour: {fileID: 11400000, guid: 7f7505de4c293ea4aab545875cba7510, type: 2}
-  gainItem: 
-  loseItem: 
+  gainImportantHappening: 
+  removeImportantHappening: 
